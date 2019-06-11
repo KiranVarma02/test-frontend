@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddCreditCardComponent } from './controllers/add-credit-card/add-credit-card.component';
-import { ExistingCardsComponent } from './controllers/existing-cards/existing-cards.component';
+import { AddCreditCardComponent } from './components/add-credit-card/add-credit-card.component';
+import { ExistingCardsComponent } from './components/existing-cards/existing-cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ExistingCardsService } from './services/existing-cards/existing-cards.service';
