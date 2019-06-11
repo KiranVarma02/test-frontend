@@ -1,0 +1,19 @@
+<h2>Existing Cards</h2>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Card Number</th>
+    <th>Balance</th>
+    <th>Limit</th>
+  </tr>
+  <div *ngFor="let existingCardDetails of existingCreditCardDetails">
+    <tr>
+      <td>{{ existingCardDetails.name }}</td>
+      <td>{{ existingCardDetails.cardNumber }}</td>
+      <td>{{ existingCardDetails.cardLimit }}</td>
+      <td>{{ existingCardDetails.balance }}</td>
+    </tr>
+  </div>
+</table>

@@ -1,0 +1,49 @@
+<h2>Credit Card System</h2>
+
+<h3>Add</h3>
+
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" class="form-control" [(ngModel)]="addNewCreditCard.name" required #nameField="ngModel"
+        [class.field-error]="form.submitted && nameField.invalid">
+      <div [hidden]="!form.submitted || nameField.valid"
+        class="alert alert-danger">
+        Enter a name
+      </div>
+    </div>
+      
+    <div class="form-group">
+      <label for="cardName">Card Number:</label>
+      <input type="text" name="cardNumber" id="cardNumber" class="form-control" [(ngModel)]="addNewCreditCard.cardNumber" required #nameField="ngModel"
+        [class.field-error]="form.submitted && nameField.cardNumber"
+        pattern="
+        ^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
+        maxlength="19">
+        <div [hidden]="!form.submitted || nameField.valid"
+          class="alert alert-danger">
+          Enter valid card number
+        </div>
+    </div>
+      
+    <div class="form-group">
+      <label for="cardLimit">Limit:</label>
+      <input type="text" name="cardLimit" id="cardLimit" class="form-control" [(ngModel)]="addNewCreditCard.cardLimit" required #nameField="ngModel"
+      [class.field-error]="form.submitted && nameField.cardLimit">
+    
+      <div [hidden]="!form.submitted || nameField.valid"
+        class="alert alert-danger">
+        Enter valid card limit
+      </div>
+    </div>
+
+    <div [hidden]="!postError"
+      class="alert alert-danger">
+      {{ postErrorMessage }}
+    </div>
+    <button class="btn btn-primary">Add</button>
+  </form>
+</div>
+  
